@@ -7,13 +7,14 @@ namespace ReverseWord
     {
         static void Main(string[] args)
         {
-            string wordUnreversed = Console.ReadLine();
-            var wordCharArray = wordUnreversed.ToCharArray();
+            string rawContent = args[0].ToString();
+            char[] wordCharArray = rawContent.ToCharArray();
             Array.Reverse(wordCharArray);
 
-            var wordReversed = new String(wordCharArray);
 
-            Console.WriteLine(wordReversed.ToString());
+            string finalContent = new String(wordCharArray);
+
+            Console.WriteLine(finalContent.ToString());
         }
     }
 }
