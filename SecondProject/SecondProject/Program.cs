@@ -6,20 +6,49 @@ namespace SecondProject
     {
         static void Main(string[] args)
         {
-            char[] charArray = "Deuses da tecnologia que tudo conhecem e tudo sabem, digam-me: qual o nome do programador dessa aplicação?".ToCharArray();
-            string rawContent = Console.ReadLine();
-            ConsoleKey keysPressed;
+            string questionStr = "Deuses da tecnologia que tudo conhecem e tudo sabem, digam-me: qual o nome do programador dessa aplicação?";
 
+            string finalContent = null;
+            ConsoleKeyInfo key;
+
+            ConsoleKeyInfo firstContent = System.Console.ReadKey();
+
+            if (firstContent.Key == ConsoleKey.Spacebar)
+            {
+                int index = 0;
+                while (true)
+                {
+                    key = System.Console.ReadKey(true);
+                    if (key.Key == ConsoleKey.Enter)
+                        break;
+                    finalContent += key.KeyChar;
+                    Console.Write(questionStr[index]);
+                    index++;
+                }
+                Console.Read();
+            }
+            else
+            {
+                finalContent = firstContent.KeyChar.ToString();
+                while (true)
+                {
+                    key = System.Console.ReadKey();
+                    if (key.Key == ConsoleKey.Enter)
+                        break;
+                    finalContent += key.KeyChar.ToString();
+                    
+                }
+
+                Console.WriteLine(finalContent);
+            }
+
+            Console.WriteLine(finalContent);
             //if (( = ) == " ")
             //{
             //    Console.WriteLine($"{rawContent} - rawContent");
             //}
 
-
-            for (int i = 0; i < rawContent.Length; i++)
-            {
-                Console.WriteLine(rawContent[i]);
-            }
+            //Console.WriteLine(password);
         }
     }
 }
