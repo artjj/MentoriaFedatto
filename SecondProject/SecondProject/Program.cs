@@ -16,7 +16,7 @@ namespace SecondProject
             if (firstContent.Key == ConsoleKey.Spacebar)
             {
                 int index = 0;
-                while (true)
+                while (true && index < questionStr.Length)
                 {
                     key = System.Console.ReadKey(true);
                     if (key.Key == ConsoleKey.Enter)
